@@ -93,14 +93,15 @@ WSGI_APPLICATION = 'monitoring_evaluating_system.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mene_db',
-        'USER': 'mene_db',
-        'PASSWORD': 'STARKEXPO',
-        'HOST': 'localhost',
-        'PORT': '5432',
-     }
+    # {}
+    'default': dj_database_url.config(default=os.getenv('postgresql://mene_db:0kcLl8LJidcmt31jn6YSVQnJFmz5dJgU@dpg-cve5262n91rc73bed3hg-a/mene_db')) 
+   #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'mene_db',
+    #     'USER': 'mene_db',
+    #     'PASSWORD': '0kcLl8LJidcmt31jn6YSVQnJFmz5dJgU',
+    #     'HOST': 'dpg-cve5262n91rc73bed3hg-a',
+    #     'PORT': '5432',
+    #  }
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
